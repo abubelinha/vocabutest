@@ -11,14 +11,21 @@ https://jsbin.com/tupoyi/4/edit?html,js,output
 var context, o=null, g=null;
 var $target;
 function loadAudio() {
-	context=new AudioContext()
-	o=null
-	g=null
-	document.addEventListener('DOMContentLoaded',function(){$(".js_play_sound").on("click",function(e){e.preventDefault()
-	$target=$(e.target)
-	eval($target.data("source"))})
-	$(".js_stop_sound").on("click",function(e){e.preventDefault()
-	o.stop()})},false)
+	context=new AudioContext();
+	o=null;
+	g=null;
+	document.addEventListener('DOMContentLoaded',function(){
+		$(".js_play_sound").on("click",function(e){
+			e.preventDefault();
+			$target=$(e.target);
+			eval($target.data("source"));
+		});
+		$(".js_stop_sound").on("click",function(e){
+			e.preventDefault();
+			o.stop();
+		});
+	}
+	,false);
 }
 
 function example1(){o=context.createOscillator()
@@ -38,7 +45,7 @@ o.type=type
 g.connect(context.destination)
 o.start(0)
 g.gain.exponentialRampToValueAtTime(0.00001,context.currentTime+x)}
-function example4(frequency,type){
+function example4(frequency,type){ return;
 	if(o===null) loadAudio();
 o=context.createOscillator()
 g=context.createGain()
