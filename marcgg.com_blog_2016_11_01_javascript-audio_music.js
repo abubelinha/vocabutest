@@ -54,7 +54,7 @@ function example3(type,x){
 	g.gain.exponentialRampToValueAtTime(0.00001,context.currentTime+x)
 }
 function example4(frequency,type){ 
-//return;
+return; //audio non running on ipad iOS 5, and not audible on iOS 10
 	if(o===null) loadAudio();
 	o=context.createOscillator()
 	g=context.createGain()
