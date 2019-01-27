@@ -11,6 +11,10 @@ https://jsbin.com/tupoyi/4/edit?html,js,output
 var context, o=null, g=null;
 var $target;
 function loadAudio() {
+/*  PENDING MODIFICATION LIKE THIS:
+    https://stackoverflow.com/questions/46363048/onaudioprocess-not-called-on-ios11/46534088#46534088
+*/
+
 	context=new AudioContext();
 	o=null;
 	g=null;
