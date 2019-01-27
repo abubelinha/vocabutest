@@ -8,14 +8,19 @@ https://stackoverflow.com/questions/879152/how-do-i-make-javascript-beep
 https://jsbin.com/tupoyi/4/edit?html,js,output
 */
 
-var context=new AudioContext()
-var o=null
-var g=null
-document.addEventListener('DOMContentLoaded',function(){$(".js_play_sound").on("click",function(e){e.preventDefault()
-var $target=$(e.target)
-eval($target.data("source"))})
-$(".js_stop_sound").on("click",function(e){e.preventDefault()
-o.stop()})},false)
+var context, o=null, g=null;
+var $target;
+function loadAudio() {
+	context=new AudioContext()
+	o=null
+	g=null
+	document.addEventListener('DOMContentLoaded',function(){$(".js_play_sound").on("click",function(e){e.preventDefault()
+	$target=$(e.target)
+	eval($target.data("source"))})
+	$(".js_stop_sound").on("click",function(e){e.preventDefault()
+	o.stop()})},false)
+}
+
 function example1(){o=context.createOscillator()
 o.type="sine"
 o.connect(context.destination)
@@ -33,7 +38,9 @@ o.type=type
 g.connect(context.destination)
 o.start(0)
 g.gain.exponentialRampToValueAtTime(0.00001,context.currentTime+x)}
-function example4(frequency,type){o=context.createOscillator()
+function example4(frequency,type){
+	if(o===null) loadAudio();
+o=context.createOscillator()
 g=context.createGain()
 o.type=type
 o.connect(g)
