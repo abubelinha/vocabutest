@@ -5,13 +5,13 @@
 <title>SQL Storage</title>
   <body>    
     <div align="center">
-	<div>
+	<!-- div>
 <li>see <a href=https://jsfiddle.net/abubelinha/tophjksv/ target=_blank>jsfiddle</a> about <a href=https://stackoverflow.com/a/26650927/710788 target=_blank>localstorage</a> with <a href=http://alasql.com target=_blank>alasql.js</a></li>
    <br/><br/>
      <input type="hidden" id="id"/>
      Corpus:<input type="text" id="firstName"/>&nbsp;
      <button onClick="xogar()">xogar</button>
-    </div>
+    </div -->
      <div id="panel" style="margin:50px;"></div>
 	 <div id="scoreboard"></div>
     </div>
@@ -171,7 +171,7 @@
 		gameover=false;
 		lastSorteo=Array();
 		var ben="", mal=null, n=0;
-		var pares=[["b","v"],["v","b"],["ge","je"],["je","ge"],["güe","gue"],["gui","güi"],["gui","gi"]];
+		var pares=[["b","v"],["v","b"],["b","v"],["v","b"],["b","v"],["v","b"],["ge","je"],["je","ge"],["güe","gue"],["gui","güi"],["gui","gi"]];
 		var par=Math.floor(Math.random() * pares.length);
 		lastSorteo.push(pares[par][0]);
 		lastSorteo.push(pares[par][1]);
